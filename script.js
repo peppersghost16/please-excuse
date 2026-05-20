@@ -14,6 +14,18 @@ const saveButton = document.querySelector(
     "#saveButton"
 );
 
+const againButton = document.querySelector(
+    "#againButton"
+);
+
+const categories = document.querySelector(
+    ".categories"
+);
+
+const actionButtons = document.querySelector(
+    ".action-buttons"
+);
+
 const signers = [
 
     {
@@ -92,6 +104,10 @@ buttons.forEach(function (button) {
     button.addEventListener(
         "click",
         function () {
+
+            categories.classList.add(
+                "hidden"
+            );
 
             const category =
                 button.textContent.trim();
@@ -263,12 +279,30 @@ buttons.forEach(function (button) {
                 "hidden"
             );
 
-            saveButton.classList.remove(
+            actionButtons.classList.remove(
                 "hidden"
             );
         }
     );
 });
+
+againButton.addEventListener(
+    "click",
+    function () {
+
+        result.classList.add(
+            "hidden"
+        );
+
+        actionButtons.classList.add(
+            "hidden"
+        );
+
+        categories.classList.remove(
+            "hidden"
+        );
+    }
+);
 
 saveButton.addEventListener(
     "click",
@@ -315,7 +349,7 @@ saveButton.addEventListener(
                         justify-content: center;
                         align-items: center;
 
-                        padding: 40px;
+                        padding: 40px 18px;
 
                         box-sizing: border-box;
 
