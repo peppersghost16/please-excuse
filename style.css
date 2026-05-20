@@ -278,9 +278,19 @@ input:focus {
     opacity: 0.6;
 }
 
-#saveButton {
+.action-buttons {
+
+    display: flex;
+
+    gap: 12px;
 
     margin-top: 20px;
+
+    flex-wrap: wrap;
+}
+
+#saveButton,
+#againButton {
 
     border:
         2px solid #e4d7cb;
@@ -311,7 +321,8 @@ input:focus {
         background 0.16s ease;
 }
 
-#saveButton:hover {
+#saveButton:hover,
+#againButton:hover {
 
     transform:
         translateY(-2px);
@@ -328,6 +339,11 @@ input:focus {
 }
 
 .hidden {
+
+    display: none;
+}
+
+.categories.hidden {
 
     display: none;
 }
@@ -357,5 +373,10 @@ input:focus {
     .result {
 
         padding: 22px;
+    }
+
+    .action-buttons {
+
+        flex-direction: column;
     }
 }
